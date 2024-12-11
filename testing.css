@@ -1,0 +1,82 @@
+  /* Additional Home Page Specific Styles */
+  .hero-section {
+    background: linear-gradient(to bottom,#000000,#ffffff);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.hero-section h1 {
+    color: #f5f8ff;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    color: #ffffff;
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.search-container {
+    display: flex;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    gap: 15px;
+}
+
+.search-container input,
+.search-container select,
+.search-container button {
+    height: 50px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+}
+
+.search-container select {
+    flex: 1;
+}
+
+.search-container input {
+    flex: 2;
+}
+
+.search-container button {
+    flex: 1;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-container button:hover {
+    background-color: #051029;
+}
+
+.service-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.category-card {
+    background: rgba(214, 201, 201, 0.268);
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.5s;
+}
+
+.category-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 10px 15px rgba(238, 237, 237, 0.1);
+}
+
+.category-card img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 15px;
+}

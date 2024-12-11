@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Services - One-Stop Solution</title>
+    <link rel="stylesheet" href="testing.css">
+</head>
+<body>
+    <!-- Navigation would typically go here -->
+    <nav style="background-color: #051029; color: white; padding: 15px; text-align: center;">
+        Home Services Platform
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1>Home Services Made Easy</h1>
+        <p>Find trusted local professionals for all your home maintenance and repair needs. From plumbing to painting, we've got you covered.</p>
+        
+        <!-- Search Container -->
+        <div class="search-container">
+            <select>
+                <option>Select Service</option>
+                <option>AC Technician</option>
+                <option>Electrician</option>
+                <option>Plumber</option>
+                <option>Mechanic</option>
+                <option>Carpenter</option>
+                <option>Cleaning Service</option>
+                <option>Pest Control</option>
+                <option>Home Appliance Repair</option>
+                <option>Building Painting</option>
+            </select>
+            <input placeholder="Searth the internet..." type="text" name="text" class="input">
+            <div class="category-card" onclick="navigateTo('index.html')"><button>search</button></div>
+        </div>
+    </section>
+
+    <!-- Service Categories -->
+    <section class="service-categories">
+        <div class="category-card">
+            <img src="AC-service-near-me.jpeg" alt="AC Services">
+           
+            <div class="category-card" onclick="navigateTo('index.html')"><h3>AC Services</h3></div>
+            <p>Professional cooling solutions</p>
+        </div>
+        <div class="category-card">
+            <img src="OIP.jpeg" alt="Electrical">
+            <div class="category-card" onclick="navigateTo('index.html')"><h3>Electrical</h3></div>
+    
+            <p>Safe and reliable electrical work</p>
+        </div>
+        <div class="category-card">
+            <img src="OIP (1).jpeg" alt="Plumbing">
+            <div class="category-card" onclick="navigateTo('index.html')"><h3>Plumbing</h3></div>
+            <p>Expert pipe and fixture services</p>
+        </div>
+        <div class="category-card">
+            <img src="R.jpeg" alt="Cleaning">
+            <div class="category-card" onclick="navigateTo('index.html')"><h3>Cleaning</h3></div>
+            <p>Thorough home and office cleaning</p>
+        </div>
+        <div class="category-card">
+            <img src="carpentry-build-basics-2000x1442.jpg" alt="Carpentry">
+            <div class="category-card" onclick="navigateTo('index.html')"><h3>Carpentry</h3></div>
+            <p>Wood work and furniture repair</p>
+        </div>
+        <div class="category-card">
+            <img src="OIP (2).jpeg" alt="Painting">
+            <div class="category-card" onclick="navigateTo('index.html')"><h3>Painting</h3></div>
+            <p>Professional painting services</p>
+        </div>
+    </section>
+
+    <!-- Container for Additional Content -->
+    <main class="container">
+        <!-- This is where the container code you mentioned will be placed -->
+        <!-- Placeholder for now -->
+        <div style="text-align: center; padding: 20px;">
+            <h2>More Services Coming Soon</h2>
+        </div>
+    </main>
+
+    <script>
+        // Search Button Functionality
+        document.querySelector('.search-container button').addEventListener('click', function() {
+            const service = document.querySelector('.search-container select').value;
+            const location = document.querySelector('.search-container input').value;
+            
+            if (service !== 'Select Service' && location) {
+                // In a real application, this would trigger a search
+                alert(`Searching for ${service} services near ${location}`);
+            } else {
+                alert('Please select a service and enter a location');
+            }
+        });
+    function navigateTo(page) {
+        window.location.href = page;
+    }
+    </script>
+</body>
+</html>

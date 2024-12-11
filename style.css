@@ -1,0 +1,162 @@
+/* Global Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Page Layout Styles */
+body {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    color: #2563eb;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #6b7280;
+}
+
+/* Main Container Styles */
+.container {
+    width: 100%;
+    max-width: 700px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+/* User Type Toggle Styles */
+.user-type-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.user-type-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-type-btn.active {
+    background-color: #2563eb;
+    color: white;
+}
+
+.user-type-btn.inactive {
+    background-color: #e5e7eb;
+    color: #4b5563;
+}
+
+/* Form Styles */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+}
+
+.full-width {
+    grid-column: span 2;
+}
+
+/* Provider List Styles */
+.provider-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.provider-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: box-shadow 0.3s;
+}
+
+.provider-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.provider-icon {
+    width: 50px;
+    height: 50px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-btn {
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .form-grid,
+    .provider-list {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width {
+        grid-column: span 1;
+    }
+}
+/* From Uiverse.io by Praashoo7 */ 
+.input {
+    border: none;
+    outline: none;
+    border-radius: 15px;
+    padding: 1em;
+    background-color: #efe7e7;
+    box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+    transition: 300ms ease-in-out;
+  }
+  
+  .input:focus {
+    background-color: white;
+    transform: scale(1.05);
+    box-shadow: 13px 13px 100px #969696,
+               -13px -13px 100px #ffffff;
+  }
+  .centered {
+    text-align: center;
+}

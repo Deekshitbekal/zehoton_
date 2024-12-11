@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Stop Service Solution</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>One-Stop Service Solution</h1>
+        <p>Connecting You with Top-Quality Service Providers</p>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- User Type Toggle -->
+        <div class="user-type-toggle">
+            <button id="customerBtn" class="user-type-btn active">Customer</button>
+            <button id="providerBtn" class="user-type-btn inactive">Service Provider</button>
+        </div>
+
+        <!-- Customer Section -->
+        <div id="customerSection" class="active-section">
+            <select id="serviceCategory" class="form-control full-width">
+                <option value="">Select Service Category</option>
+                <option>AC Technician</option>
+                <option>Electrician</option>
+                <option>Plumber</option>
+                <option>Mechanic</option>
+                <option>Carpenter</option>
+                <option>Cleaning Service</option>
+                <option>Pest Control</option>
+                <option>Home Appliance Repair</option>
+                <option>Building Painting</option>
+            </select>
+
+            <div class="form-grid" style="margin-top: 15px;">
+                <input type="text" placeholder="Location" class="form-control" id="locationInput">
+                <button class="form-control">Find Providers</button>
+            </div>
+
+            <!-- Provider List Section -->
+            <div id="providerResults" class="provider-list">
+                <!-- Providers will be dynamically populated here -->
+            </div>
+        </div>
+
+        <!-- Service Provider Section -->
+        <div id="providerSection" class="inactive-section" style="display: none;">
+            <div class="form-grid">
+        
+<input type="text" autocomplete="off" name="text" class="input" placeholder="Username">
+<input type="tel" autocomplete="off" name="text" class="input" placeholder="contact number">
+<input type="email" autocomplete="off" name="text" class="input" placeholder="Email">
+<input type="location" autocomplete="off" name="text" class="input" placeholder="Location">
+<h5 class="centered">OR</h5>
+                <a href="https://www.google.co.in/maps" target="_blank" style="text-decoration: none;">
+                    <button type="button" class="form-control full-width">Location</button>
+                  </a>
+                  
+
+        
+                  <div class="category-card" onclick="navigateTo('3rd page.html')"><button class="form-control full-width">Booking services</button></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // User Type Toggle Functionality
+        document.getElementById('customerBtn').addEventListener('click', function() {
+            // Switch to Customer Section
+            document.getElementById('customerSection').style.display = 'block';
+            document.getElementById('providerSection').style.display = 'none';
+            
+            // Update button styles
+            this.classList.add('active');
+            this.classList.remove('inactive');
+            document.getElementById('providerBtn').classList.add('inactive');
+            document.getElementById('providerBtn').classList.remove('active');
+        });
+
+        document.getElementById('providerBtn').addEventListener('click', function() {
+            // Switch to Provider Section
+            document.getElementById('customerSection').style.display = 'none';
+            document.getElementById('providerSection').style.display = 'block';
+            
+            // Update button styles
+            this.classList.add('active');
+            this.classList.remove('inactive');
+            document.getElementById('customerBtn').classList.add('inactive');
+            document.getElementById('customerBtn').classList.remove('active');
+        });
+
+        // Service Category Selection and Provider Filtering
+        document.getElementById('serviceCategory').addEventListener('change', function() {
+            const selectedService = this.value;
+            const providerResults = document.getElementById('providerResults');
+            
+            // Clear previous results
+            providerResults.innerHTML = '';
+
+            // Simulate provider results (in real app, this would be backend API call)
+            if (selectedService) {
+                for (let i = 1; i <= 4; i++) {
+                    const providerCard = document.createElement('div');
+                    providerCard.classList.add('provider-card');
+                    providerCard.innerHTML = `
+                        <div class="provider-icon">SP${i}</div>
+                        <div>
+                            <h3>Service Provider ${i}</h3>
+                            <p>Specialization: ${selectedService}</p>
+<div class="category-card" onclick="navigateTo('3rd page.html')"><button class="form-control full-width">Booking services</button></div>
+
+
+                        </div>
+                    `;
+                    providerResults.appendChild(providerCard);
+                }
+            }
+        });
+
+        // Location-based Provider Suggestion (Placeholder)
+        document.querySelector('.form-grid button').addEventListener('click', function() {
+            const location = document.getElementById('locationInput').value;
+            if (location) {
+                alert(`Searching for providers near ${location}`);
+                // In a real application, this would trigger a location-based search
+            } else {
+                alert('Please enter a location');
+            }
+        });
+        function navigateTo(page) {
+        window.location.href = page;
+    }
+    </script>
+</body>
+</html>
